@@ -33,7 +33,7 @@ void Cat::read(const QJsonObject &json)
         m_name = json["name"].toString();
     }
     if (json.contains("breed") && json["breed"].isString()) {
-        QString tmpBreed = json["name"].toString();
+        QString tmpBreed = json["breed"].toString();
         m_breed = findIdx(tmpBreed, catsBreeds, CATS_BREEDS_SIZE);
     }
     if (json.contains("disease") && json["disease"].isString()) {
@@ -61,7 +61,7 @@ void Cat::print() const
 {
     QTextStream out(stdout);
 
-    out << m_name << ":" << m_breed << ":" << m_disease;
+    out << m_name << ":" << catsBreeds[m_breed] << ":" << catsDisease[m_disease];
 }
 
 

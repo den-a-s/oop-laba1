@@ -33,7 +33,7 @@ void Dog::read(const QJsonObject &json)
         m_name = json["name"].toString();
     }
     if (json.contains("breed") && json["breed"].isString()) {
-        QString tmpBreed = json["name"].toString();
+        QString tmpBreed = json["breed"].toString();
         m_breed = findIdx(tmpBreed, dogsBreeds, DOGS_BREEDS_SIZE);
     }
     if (json.contains("disease") && json["disease"].isString()) {
@@ -61,7 +61,7 @@ void Dog::print() const
 {
     QTextStream out(stdout);
 
-    out << m_name << ":" << m_breed << ":" << m_disease;
+    out << m_name << ":" << dogsBreeds[m_breed] << ":" << dogsDisease[m_disease];
 }
 
 
