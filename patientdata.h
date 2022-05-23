@@ -21,8 +21,8 @@ public:
     static PatientData& instance();
 
     void print() const;
+    void load();
 private:
-    void loadData();
     void readPatients(const QJsonObject &json);
     AbstractAnimal *getAnimal(const QJsonObject &json);
     PatientData();

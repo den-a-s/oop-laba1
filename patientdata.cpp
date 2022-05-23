@@ -24,7 +24,7 @@ void PatientData::print() const
     }
 }
 
-void PatientData::loadData()
+void PatientData::load()
 {
     QString path = QStandardPaths::locate(QStandardPaths::HomeLocation, "patiens_data.json");
     QFile loadFile(path);
