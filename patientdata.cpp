@@ -28,10 +28,9 @@ void PatientData::loadData()
 {
     QString path = QStandardPaths::locate(QStandardPaths::HomeLocation, "patiens_data.json");
     QFile loadFile(path);
-
     if (!loadFile.exists()) throw "Bruh";
     if (!loadFile.open(QIODevice::ReadOnly)) {
-        qWarning("Couldn't open save file.");
+        qWarning("Couldn't open file.");
         throw "Bruh";
     }
     QByteArray saveData = loadFile.readAll();
