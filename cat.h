@@ -32,7 +32,7 @@ public:
     Cat(const QString &name, int breed, int disease);
     Cat(const Cat &cat);
     Cat &operator=(const Cat &cat);
-    ~Cat();
+    ~Cat() override;
 
     void read(const QJsonObject &json) override;
 

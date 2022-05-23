@@ -34,7 +34,7 @@ public:
     Dog(const QString &name, int breed, int disease);
     Dog(const Dog &cat);
     Dog &operator=(const Dog &cat);
-    ~Dog();
+    ~Dog() override;
 
     void read(const QJsonObject &json) override;
 

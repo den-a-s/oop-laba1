@@ -38,7 +38,7 @@ void Cat::read(const QJsonObject &json)
     }
     if (json.contains("disease") && json["disease"].isString()) {
         QString tmpDisease = json["disease"].toString();
-        m_breed = findIdx(tmpDisease, catsDisease, CATS_DISEASE_SIZE);
+        m_disease = findIdx(tmpDisease, catsDisease, CATS_DISEASE_SIZE);
     }
 }
 

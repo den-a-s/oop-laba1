@@ -15,7 +15,7 @@ public:
 
     virtual void setDisease(int newDisease) = 0;
 
-    virtual void print() = 0;
+    virtual void print() const = 0;
 
-    virtual ~AbstractAnimal() = 0;
+    virtual ~AbstractAnimal(){};
 };
