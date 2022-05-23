@@ -8,8 +8,8 @@ CommandHandler::CommandHandler()
 void CommandHandler::handle()
 {
     help();
-    int cmd;
-    std::cin >> cmd;
+    int cmd = -1;
+    QTextStream(stdin) >> cmd;
     switch (cmd) {
     case CommandHandler::Command::Print:
         PatientData::instance().print();
@@ -22,6 +22,6 @@ void CommandHandler::handle()
 void CommandHandler::help()
 {
     QTextStream(stdout) <<
-            QString::fromLocal8Bit("Комманды:") <<
-            QString::fromLocal8Bit("1: Распечатать данные о пациентах.");
+            QString::fromLocal8Bit("Комманды: \n") <<
+            QString::fromLocal8Bit("1: Распечатать данные о пациентах. \n");
 }

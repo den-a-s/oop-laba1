@@ -11,6 +11,6 @@ private:
     void help();
 
     enum Command {
-        Print = 1
+        Print = 1,
     };
 };
