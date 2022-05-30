@@ -28,15 +28,27 @@ const static QString dogsBreeds[DOGS_BREEDS_SIZE] {
     QString::fromLocal8Bit("Чихуахуа")
 };
 
+// Конкретная реализация абстрактного животного
 class Dog: public AbstractAnimal {
 public:
+    // Конструктор по умолчанию
     Dog();
+
+    // Конструктор с параметрами
     Dog(const QString &name, int breed, int disease);
+
+    // Конструктор копирования
     Dog(const Dog &cat);
+
+    // Оператор присваивания
     Dog &operator=(const Dog &cat);
+
+    // Перегрузка конструктора абстрактного животного
     ~Dog() override;
 
     void read(const QJsonObject &json) override;
+
+    void write(QJsonObject &json) const override;
 
     void setName(const QString &newName) override;
 
@@ -46,7 +58,20 @@ public:
 
     void print() const override;
 
+    // Печать пронумерованного списка пород кошек
+    static void printBreeds();
+
+    // Печать пронумерованного списка пород собак
+    static void printDisease();
+
 private:
+
+    // Валидация породы
+    void validateBreed(int breed);
+
+    // Валидация болезни
+    void validateDisease(int disease);
+
     QString m_name;
     int m_breed;
     int m_disease;

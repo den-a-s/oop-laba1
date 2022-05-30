@@ -1,5 +1,6 @@
 #pragma once
 
+// Возвращает индекс места элемента в массиве
 template<class T>
 int findIdx(const T &item, const T *array, int sizeArray)
 {
