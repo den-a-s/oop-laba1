@@ -7,7 +7,7 @@
 
 ## Как сбилдить
 
-Под Windows легче всего будет открыть проект в VisualStudio.
+Под Windows легче всего будет открыть проект в VisualStudio или CLion.
 
 Под Linux:
 ```
